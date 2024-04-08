@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<TitledPane fx:id="photosTitledPane" alignment="CENTER" animated="false" collapsible="false" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="754.0" text="Photos in &quot;&quot;"
+	xmlns="http://javafx.com/javafx/9"
+	xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PhotosController">
+	<content>
+		<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="120.0" prefWidth="678.0">
+			<children>
+				<SplitPane dividerPositions="0.38" layoutX="181.0" layoutY="141.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+					<items>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+							<children>
+								<SplitPane dividerPositions="0.8220502901354" layoutX="105.0" layoutY="32.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="371.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+									<items>
+										<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+											<children>
+												<ListView fx:id="photosListView" layoutX="1.0" layoutY="1.0" prefHeight="468.0" prefWidth="262.0" />
+											</children>
+										</AnchorPane>
+										<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+											<children>
+												<Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#addPhoto" prefHeight="29.0" prefWidth="70.0" text="Add" />
+												<Button layoutX="14.0" layoutY="56.0" mnemonicParsing="false" onAction="#deletePhoto" prefHeight="29.0" prefWidth="70.0" text="Delete" />
+												<Button layoutX="180.0" layoutY="15.0" mnemonicParsing="false" onAction="#goBack" prefHeight="29.0" prefWidth="70.0" text="Back" />
+												<Button layoutX="98.0" layoutY="15.0" mnemonicParsing="false" onAction="#movePhoto" prefHeight="29.0" prefWidth="70.0" text="Move" />
+												<Button layoutX="98.0" layoutY="56.0" mnemonicParsing="false" onAction="#copyPhoto" prefHeight="29.0" prefWidth="70.0" text="Copy" />
+												<Button layoutX="180.0" layoutY="56.0" mnemonicParsing="false" onAction="#closeCurrentWindow" prefHeight="29.0" prefWidth="70.0" text="Quit" />
+											</children>
+										</AnchorPane>
+									</items>
+								</SplitPane>
+							</children>
+						</AnchorPane>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+							<children>
+								<SplitPane dividerPositions="0.60" layoutX="46.0" layoutY="123.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+									<items>
+										<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+											<children>
+												<ImageView fx:id="selectedImageView" fitHeight="308.0" fitWidth="500.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+													<image>
+														<Image url="@../../../../../../Pictures/Wallpaper/BLEACH57.png" /> <!-- <Image url="@../../../../../../Pictures/Wallpaper/BLEACH57.png" /> -->
+													</image>
+												</ImageView>
+												<Button layoutX="11.0" layoutY="310.0" mnemonicParsing="false" onAction="#prevPhoto" prefHeight="29.0" prefWidth="146.0" text="Prev" />
+												<Button layoutX="280.0" layoutY="310.0" mnemonicParsing="false" onAction="#nextPhoto" prefHeight="29.0" prefWidth="146.0" text="Next" />
+											</children>
+										</AnchorPane>
+										<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+											<children>
+												<Label layoutX="16.0" layoutY="115.0" text="TAGS:" />
+												<Label layoutX="16.0" layoutY="17.0" text="Caption:" />
+												<Label layoutX="17.0" layoutY="49.0" text="Date Taken:" />
+												<TextField fx:id="captionTextField" editable="false" layoutX="100.0" layoutY="11.0" prefHeight="29.0" prefWidth="257.0" />
+												<TextField fx:id="dateTakenTextField" editable="false" layoutX="100.0" layoutY="44.0" prefHeight="29.0" prefWidth="257.0" />
+												<Button layoutX="163.0" layoutY="183.0" mnemonicParsing="false" onAction="#addTag" prefHeight="29.0" prefWidth="110.0" text="Add Tag" />
+												<Button layoutX="310.0" layoutY="183.0" mnemonicParsing="false" onAction="#deleteTag" prefHeight="29.0" prefWidth="110.0" text="Delete Tag" />
+												<Button layoutX="20.0" layoutY="183.0" mnemonicParsing="false" onAction="#editCaption" prefHeight="29.0" prefWidth="110.0" text="Edit Caption" />
+												<ListView fx:id="tagsListView" layoutX="100.0" layoutY="77.0" prefHeight="100.0" prefWidth="257.0" />
+											</children>
+										</AnchorPane>
+									</items>
+								</SplitPane>
+							</children>
+						</AnchorPane>
+					</items>
+				</SplitPane>
+			</children>
+		</AnchorPane>
+	</content>
+	<font>
+		<Font name="Comic Sans MS" size="17.0" />
+	</font>
+</TitledPane>

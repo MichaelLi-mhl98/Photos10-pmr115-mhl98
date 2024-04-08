@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<TitledPane alignment="CENTER" animated="false" collapsible="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="137.0" prefWidth="185.0" text="Edit Caption"
+	xmlns="http://javafx.com/javafx/9"
+	xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Edit_Caption">
+	<content>
+		<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="42.0" prefWidth="0.0">
+			<children>
+				<TextField fx:id="captionTextField" layoutX="10.0" layoutY="14.0" promptText="New Caption ">
+					<font>
+						<Font name="Comic Sans MS" size="12.0" />
+					</font>
+				</TextField>
+				<Button layoutX="10.0" layoutY="52.0" mnemonicParsing="false" onAction="#editCaption" text="Edit Caption" />
+				<Button layoutX="102.0" layoutY="52.0" mnemonicParsing="false" onAction="#closeCurrentWindow" prefHeight="26.0" prefWidth="72.0" text="Cancel">
+					<font>
+						<Font name="Comic Sans MS" size="12.0" />
+					</font>
+				</Button>
+			</children>
+		</AnchorPane>
+	</content>
+	<font>
+		<Font name="Comic Sans MS" size="12.0" />
+	</font>
+</TitledPane>
