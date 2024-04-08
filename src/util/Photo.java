@@ -40,7 +40,7 @@ public class Photo implements Serializable {
      * @param file File object that contains the photo
      */
     public Photo(File file) {
-        this.photoCaption = file.getPath();
+        this.photoCaption = ("/data/Stock-photos/" + file.getName()).toString();
         this.photoFile = file;
         this.photoDate = new Date(file.lastModified());
         this.photoTags = new ArrayList<Tag>();
@@ -121,9 +121,9 @@ public class Photo implements Serializable {
      * @return String path name
      */
     public String getPhotoPath() {
-        return this.photoFile.getPath();
+        return (System.getProperty("user.dir") + "/data/Stock-photos/" + this.photoFile.getName()).toString();
     }
-    
+
     /**
      * Converts the Date object into a formatted string
      * 
