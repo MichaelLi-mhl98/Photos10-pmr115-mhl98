@@ -216,6 +216,7 @@ public class PhotosController extends Controller {
 		    public void changed(ObservableValue<? extends Photo> obsList, Photo oldPhoto, Photo newPhoto) {
 		        if(newPhoto!=null) {
 		            String path = "file:///" + newPhoto.getPhotoPath();
+					System.out.println(path);
 		            Image image = new Image(path, true);
 		            selectedImageView.setImage(image);
 		            

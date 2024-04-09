@@ -67,7 +67,7 @@ public class Add_Photo extends Controller{
 		selectedFile = fileChooser.showOpenDialog(mainStage);
 		
 		if (selectedFile != null) {
-			photoPathTextField.setText(("/data/Stock-photos/" + selectedFile.getName()).toString());
+			photoPathTextField.setText(selectedFile.getAbsolutePath());
 		}
 	}
 }

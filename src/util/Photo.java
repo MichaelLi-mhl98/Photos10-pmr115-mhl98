@@ -40,7 +40,7 @@ public class Photo implements Serializable {
      * @param file File object that contains the photo
      */
     public Photo(File file) {
-        this.photoCaption = ("/data/Stock-photos/" + file.getName()).toString();
+        this.photoCaption = file.getPath();
         this.photoFile = file;
         this.photoDate = new Date(file.lastModified());
         this.photoTags = new ArrayList<Tag>();
@@ -121,7 +121,13 @@ public class Photo implements Serializable {
      * @return String path name
      */
     public String getPhotoPath() {
-        return (System.getProperty("user.dir") + "/data/Stock-photos/" + this.photoFile.getName()).toString();
+        if (this.photoFile.getParent().endsWith("Stock-photos")) {
+            // Stock photo, use a relative path
+            return (System.getProperty("user.dir") + "/data/Stock-photos/" + this.photoFile.getName()).toString();
+        } else {
+            // User photo, use the absolute path
+            return this.photoFile.getPath();
+        }
     }
 
     /**
